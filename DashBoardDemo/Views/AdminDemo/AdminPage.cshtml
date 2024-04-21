@@ -1,0 +1,69 @@
+﻿@*@{
+    ViewData["Title"] = "Admin";
+    Layout = "";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DashBoardDemo</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DashBoardDemo.styles.css" asp-append-version="true" />
+    <link href="~/css/datatablecss/jquery.datatables.css" rel="stylesheet" />
+    <link href="~/css/datatablecss/jquery.datatables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+<body>
+    <div class="header">
+        <h2>Authorized Users Only</h2>
+    </div>
+    <div class="login">
+        <h1>Login to DashBoard</h1>
+
+        <form id="AdminForm" action="/AdminDemo/AdminPage" method="post">
+            <p><input type="text" name="UserName" id="UserName" value="" placeholder="UserName or Email" required></p>
+            <p>
+                <input type="password" name="passcode" id="passcode" value="" placeholder="Password" required>
+                <span id="showPassword" class="eye-icon"><i class="fas fa-eye"></i></span>
+            </p>
+
+            <p class="remember_me">
+                <label>
+                    <input type="checkbox" name="remember_me" id="remember_me">
+                    Remember me on this computer
+                </label>
+            </p>
+            <p class="submit"><input type="button" id="submit" name="commit" value="Login"></p>
+            <hr />
+            @ViewBag.username
+        </form>
+    </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - DashBoardDemo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/datatable/jquery.datatables.js"></script>
+    <script src="~/datatable/jquery.datatables.min.js"></script>
+    <script src="~/js/jquery.validate.min.js"></script>
+    <script src="~/js/moment.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/adminpage.js"></script>
+   
+</body>
+</html>
+
+
+<link href="~/css/adminpage.css" rel="stylesheet" />
+
+@section Scripts{
+    <script src="~/js/adminpage.js"></script>
+}*@

@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "PatientTimeSlot";
+    Layout = "_Layout";
+}
+
+
+
+
+
+
+<form id="form1">
+    <div class="container">
+        <h3 class="text-uppercase text-center font-weight-bold mt-4 heading">Patients TimeSlots</h3>
+        <table id="tblPatientTimeSlot" class="table table-bordered table-striped table-hover">
+            <thead style="border-color:gray;background-color:#C0C0C0;">
+                <tr>
+                    <th class="text-center">SL.No</th>
+                    <th class="text-center">Patient Name</th>
+                    <th class="text-center">Doctor Name</th>
+                    <th class="text-center">Date</th>
+                    <th class="text-center">SlotTime</th>
+                    <th class="text-center">Approve/Reject</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+        </table>
+    </div>
+</form>
+
+<style>
+   
+
+</style>
+
+
+<link href="~/css/patienttimeslot.css" rel="stylesheet" />
+@section Scripts{
+    <script src="~/js/jsserverside/serversidepatientstimeslot.js"></script>
+ }

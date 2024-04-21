@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "DoctorsList";
+    Layout = "_Layout";
+}
+
+   @*Comment it for it is not implemented in the datatble butr donot remove it*@
+   @* <div>
+    <a asp-action="DashBoard"><i class=" fa fa-square-o">Back to DashBoard</i></a>
+    </div>*@
+  @*  <div>
+
+    <label for="DoctorName">Doctor Name:</label>
+    <input type="text" id="DoctorName" name="DoctorName">
+    <button id="searchBtn">Search</button>
+
+    <a asp-action="DoctorMaster"><i class=" fa fa-square-o">Back to Full List</i></a>
+</div>*@
+
+<form id="form1">
+    <a asp-action="Create" class="btn btn-info">
+        <i class="fa fa-plus"></i>
+        <span class="ml-2">Add Doctors</span>
+    </a>
+
+    <div class="container">
+        <h3 class="text-uppercase text-center font-weight-bold mt-4 heading">Doctor Lists</h3>
+        <table id="tblEmployee" class="table table-bordered table-striped">
+            <thead style="border-color:gray;background-color:#C0C0C0;">
+                <tr>
+                    <th class="text-center">SL.No</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Phone</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Speciality</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</form>
+
+@section Scripts{
+    <script src="~/js/doctormaster_datatable.js"></script>
+}
+
+<style>
+    th {
+        text-align: center;
+    }
+
+    .table-bordered {
+        border: 1px solid #ccc;
+    }
+
+        .table-bordered th,
+        .table-bordered td {
+            border: 1px solid #ccc;
+        }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        color: #fff;
+        background-color: #17a2b8;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn:hover {
+            background-color: #138496;
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .btn span {
+            line-height: 1;
+        }
+
+    /* Center the edit icon */
+    .edit-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .heading {
+        font-size: 24px;
+        color: #333;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        text-decoration: underline;
+    }
+
+    #tblEmployee {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+</style>
+
+

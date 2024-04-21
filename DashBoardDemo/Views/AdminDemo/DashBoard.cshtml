@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "DashBoard";
+    Layout = "_Layout";
+}
+
+
+
+<div class="card dashboard-card">
+    <div class="card-body">
+        <h5 class="card-title text-center font-weight-bold">Clinic Statistics</h5>
+
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card dashboard-card-inner">
+                    <div class="card-body">
+                        <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="AdminDemo" asp-action="DoctorMaster">
+                        <h6 class="card-subtitle text-primary font-weight-bold">Total Doctors</h6></a>
+                        <h2 class="text-center" id="totaldoctors">0</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card dashboard-card-inner">
+                    <div class="card-body">
+                         <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="AdminDemo" asp-action="PatientList">
+                        <h6 class="card-subtitle text-primary font-weight-bold">Total Patients</h6></a>
+                        <h2 class="text-center" id="totalpatients">0</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card dashboard-card-inner">
+                    <div class="card-body">
+                         <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="AdminDemo" asp-action="PatientTimeSlot">
+                        <h6 class="card-subtitle text-primary font-weight-bold">Today's Appointment</h6></a>
+                        <h2 class="text-center" id="todayspatients">0</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card dashboard-card-inner">
+                    <div class="card-body">
+                         <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="AdminDemo" asp-action="PatientTimeSlot">
+                        <h6 class="card-subtitle text-primary font-weight-bold">Approved Appointment</h6></a>
+                        <h2 class="text-center" id="approved">0</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card dashboard-card-inner">
+                    <div class="card-body">
+                         <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="AdminDemo" asp-action="PatientTimeSlot">
+                        <h6 class="card-subtitle text-primary font-weight-bold">Rejected Appointment</h6></a>
+                        <h2 class="text-center" id="rejected">0</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body chart-container">
+        <div class="chart-inner-container">
+            <div class="chart-left">
+                <canvas id="pieChartCanvas"></canvas>
+            </div>
+            <div class="chart-right">
+                <canvas id="attendanceGraphCanvas"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        // Get the values from the ViewBag in your Razor view
+        var totalDoctors = @ViewBag.TotalDoctors;
+        var totalPatients = @ViewBag.TotalPatients;
+        var todaysPatients = @ViewBag.TodaysPatients;
+        var approved = @ViewBag.Approved;
+        var rejected = @ViewBag.Rejected;
+
+        // Function to count up to a specified number
+        function countUp(targetElement, targetNumber) {
+            var count = 0;
+            var increment = 1;
+            var delay = 10; // Delay in milliseconds between each count increment
+
+            var interval = setInterval(function () {
+                count += increment;
+                if (count >= targetNumber) {
+                    clearInterval(interval);
+                    count = targetNumber;
+                }
+                $(targetElement).text(count);
+            }, delay);
+        }
+
+        // Call the countUp function for each target element
+        countUp("#totaldoctors", totalDoctors);
+        countUp("#totalpatients", totalPatients);
+        countUp("#todayspatients", todaysPatients);
+        countUp("#approved", approved);
+        countUp("#rejected", rejected);
+
+       
+
+    });
+
+</script>
+@section Scripts{
+    
+    <script src="~/js/piechart.js"></script>
+   
+}
+
+<link href="~/css/dashboard.css" rel="stylesheet" />

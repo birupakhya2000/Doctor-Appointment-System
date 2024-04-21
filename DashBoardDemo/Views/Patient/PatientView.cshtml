@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "PatientRegd";
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DashBoardDemo</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DashBoardDemo.styles.css" asp-append-version="true" />
+    <link href="~/css/datatablecss/jquery.datatables.css" rel="stylesheet" />
+    <link href="~/css/datatablecss/jquery.datatables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="card" id="addEditDiv">
+        <div class="card-header" style="background-color:skyblue">
+            <h3 class="card-title" id="addEditTitle" style="text-align: center;
+    font-family: serif;">
+                Register Patient
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+                        <img class="card-background" src="~/img/PatientRegistration.jpg" />
+            <div class="container" style="position:relative;z-index:1 ;backdrop-filter:blur(8px);">
+                <button title="Back to Doctor list" onclick="window.location.href='/Doctor/DoctorList'" style="background-color:skyblue;float:right;border-radius:50px;" class="mt-2">Back to Doctor list</button>
+                <div class="row d-flex justify-content-center">
+                    <form id="RegistrationForm" class="w-50 p-2 " style="background:#8080800f; z-index:auto;">
+                        <div class="col-md-12">
+                            <label for="PatientName">Patient Name</label>
+                            <input type="text" class="form-control" id="PatientName" name="Name" placeholder="Name">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="DoctorName">Doctor Name</label>
+                            <input type="text" class="form-control" id="DoctorName" name="DoctorName" placeholder="Doctor Name" readonly>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="Dob">Date of Birth</label>
+                            <input type="date" class="form-control" id="Dob" name="Dob" placeholder="Date of Birth" onchange="validateDob()">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="Phone">Phone</label>
+                            <input type="tel" class="form-control" id="Phone" name="Phone" placeholder="Phone">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="Email">Email</label>
+                            <input type="email" class="form-control" id="Email" name="Email" placeholder="Email">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="date">Date</label>
+                            <input type="date" class="form-control" id="date" name="date" onchange="validateDate()">
+
+                        </div>
+                        <div class="col-md-12 mt-2">
+                            <button id="fetchSlotsBtn" class="btn btn-primary btn-block">Fetch Time Slots</button>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="SlotTimeDropdown">Slot Time</label>
+                            <select class="form-control select2" id="SlotTimeDropdown" name="SlotTime"></select>
+                            <span class="text-danger" id="spnSlotTimeDropdown" style="font-weight:bold"></span>
+                        </div>
+                        <div class="col-md-12 mt-2">
+                            <button type="button" id="patientbooking" class="btn btn-primary btn-block" style="background-color: green;">Register</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - DashBoardDemo - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/datatable/jquery.datatables.js"></script>
+    <script src="~/datatable/jquery.datatables.min.js"></script>
+    <script src="~/js/jquery.validate.min.js"></script>
+    <script src="~/js/moment.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/patientview.js"></script>
+    <link href="~/css/patientsview.css" rel="stylesheet" />
+</body>
+</html>
+<style>
+    .card-background {
+        object-fit:cover;
+        position:absolute;
+        width:100%;
+        z-index:0;
+        
+    }
+</style>
+
+
+

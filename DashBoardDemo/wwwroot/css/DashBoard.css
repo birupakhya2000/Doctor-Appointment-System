@@ -1,0 +1,64 @@
+﻿.dashboard-card {
+    background-color: #f5f7fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboard-card-inner {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    padding: 20px;
+    border-radius: 8px;
+    height: 100%;
+}
+
+    .dashboard-card-inner:hover {
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+    }
+
+    .dashboard-card-inner .card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .dashboard-card-inner h6 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .dashboard-card-inner h2 {
+        font-size: 28px;
+        font-weight: bold;
+        margin: 0;
+        color: #555;
+    }
+.chart-inner-container {
+    background-color: #f5f7fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    transform: translateY(0); /* Initially set translateY to 0 */
+}
+
+    .chart-inner-container:hover {
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px); /* Shrink the container upwards on hover */
+    }
+
+.chart-left {
+    flex: 1;
+}
+
+.chart-right {
+    flex: 1;
+}

@@ -1,0 +1,134 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+.navbar-nav .nav-item {
+    position: relative;
+}
+.navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+}
+    .navbar-brand:hover {
+        transform: translateY(-2px);
+    }
+/* Add blue line to main navigation headers */
+.navbar-nav .nav-item::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: blue; /* Change the color to your desired underline color */
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-item:hover::before,
+.navbar-nav .nav-item:focus::before {
+    width: 100%;
+}
+
+/* Add blue line to dropdown menu */
+.dropdown-menu .dropdown-item {
+    position: relative;
+}
+
+    .dropdown-menu .dropdown-item::before {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: blue; /* Change the color to your desired underline color */
+        transition: width 0.3s ease;
+    }
+
+    .dropdown-menu .dropdown-item:hover::before,
+    .dropdown-menu .dropdown-item:focus::before {
+        width: 100%;
+    }
+
+
+.navbar-nav .nav-link {
+    transition: transform 0.3s ease;
+}
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus {
+        transform: translateY(-2px);
+    }
+
+#welcomeMessage,
+#dateTime {
+    font-weight: bold;
+    color: #000000; /* Replace with the desired dark color value */
+}
+
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    text-align: center;
+
+}
+
+.table > thead > tr > th {
+    background-color: #17a2b8 !important;
+    color: white;
+}
+
+.overlayfullscreenloader {
+    background: rgba(254,254,254, 0.4) none repeat scroll 0 0;
+    text-align: center;
+    cursor: wait;
+    display: none;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    height: 100% !important;
+}
+
+    .overlayfullscreenloader img {
+        width: 60px;
+    }
+
+    .overlayfullscreenloader * {
+        vertical-align: middle;
+    }
+
+    .overlayfullscreenloader span {
+        display: inline-block;
+        height: 100%;
+    }

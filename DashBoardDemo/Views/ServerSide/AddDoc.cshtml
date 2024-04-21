@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "DoctorTimeSlotRegd";
+    Layout = "_Layout";
+}
+
+<form id="RegistrationForm">
+    <div class="form-group">
+        <label for="DoctorDropdown">Doctor Name</label>
+        <select class="form-control select2" id="DoctorDropdown" name="DoctorName"></select>
+    </div>
+
+    <div class="form-group">
+        <label for="FromTime">FromTime</label>
+        <input type="datetime-local" class="form-control" id="FromTime" name="FromTime" placeholder="Email">
+    </div>
+
+    <div class="form-group">
+        <label for="ToTime">ToTime</label>
+        <input type="datetime-local" class="form-control" id="ToTime" name="ToTime" placeholder="ToTime" />
+    </div>
+
+    <input type="hidden" class="doctorId" id="DoctorId" name="DoctorId" value="">
+
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+
+
+
+
+
+@section Scripts{
+    <script src="~/js/jsserverside/ssadddoc.js"></script>
+ }

@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "PatientTimeSlot";
+    Layout = "_Layout";
+}
+
+
+@*Comment it for it is not implemented in the datatble butr donot remove it*@
+@*<div>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date">
+    <label for="PatientName">Patient Name:</label>
+    <input type="text" id="PatientName" name="PatientName">
+    <button id="searchBtn">Search</button>
+    
+    <a asp-action="PatientTimeSlot"><i class=" fa fa-square-o">Back to Full List</i></a>
+</div>
+*@
+
+<form id="form1">
+    <div class="container">
+        <h3 class="text-uppercase text-center font-weight-bold mt-4 heading">Patients TimeSlots</h3>
+        <table id="tblPatientTimeSlot" class="table table-bordered table-striped table-hover">
+            <thead style="border-color:gray;background-color:#C0C0C0;">
+                <tr>
+                    <th class="text-center">SL.No</th>
+                    <th class="text-center">Patient Name</th>
+                    <th class="text-center">Doctor Name</th>
+                    <th class="text-center">Date</th>
+                    <th class="text-center">SlotTime</th>
+                    <th class="text-center">Approve/Reject</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">1</td>
+                    <td class="text-center">John Doe</td>
+                    <th class="text-center">Doctor Name</th>
+                    <td class="text-center">24/05/2023</td>
+                    <td class="text-center">10:00 AM</td>
+                    <td class="text-center approval-status">Approved</td>
+                </tr>
+                <!-- Add more rows dynamically using JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</form>
+
+
+
+
+<link href="~/css/patienttimeslot.css" rel="stylesheet" />
+ @section Scripts{
+   @* <script src="~/js/patienttimeslot.js"></script>*@
+    <script src="~/js/patientstimeslot_datatable.js"></script>
+ }

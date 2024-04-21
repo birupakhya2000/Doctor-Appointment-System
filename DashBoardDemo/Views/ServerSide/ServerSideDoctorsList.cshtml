@@ -1,0 +1,116 @@
+﻿@{
+    ViewData["Title"] = "DoctorsList";
+    Layout = "_Layout";
+}
+
+
+@*<div>
+
+    
+        <label for="DoctorName">Search by Doctor Name:</label>
+        <input type="text" id="DoctorName">
+        <button id="searchBtn" type="button">Search</button>
+   
+
+    <a asp-action="ServerSideDoctorsList"><i class=" fa fa-square-o">Back to Full List</i></a>
+</div>*@
+<form id="form1">
+    <a asp-action="DoctorRegdEdit" class="btn btn-info">
+        <i class="fa fa-plus"></i>
+        <span class="ml-2">Add Doctors</span>
+    </a>
+    <div class="container">
+        <h3 class="text-uppercase text-center font-weight-bold mt-4 heading">Doctor Lists</h3>
+        <table id="tblEmployee" class="table table-bordered table-striped table-hover">
+            <thead style="border-color:gray;background-color:#C0C0C0;">
+                <tr>
+                    <th class="text-center">SL.No</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Phone</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Speciality</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</form>
+
+@section Scripts{
+    <script src="~/js/jsserverside/serversidedoctorlist.js"></script>
+}
+<style>
+    th {
+        text-align: center;
+    }
+
+    .table-bordered {
+        border: 1px solid #ccc;
+    }
+
+        .table-bordered th,
+        .table-bordered td {
+            border: 1px solid #ccc;
+        }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        color: #fff;
+        background-color: #17a2b8;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn:hover {
+            background-color: #138496;
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .btn span {
+            line-height: 1;
+        }
+
+    /* Center the edit icon */
+    .edit-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    /* Hover effect */
+    .table-hover tbody tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    /* Responsive table */
+    .table-responsive {
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
+    /* Styling for the heading */
+    .heading {
+        font-size: 24px;
+        color: #333;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        text-decoration: underline;
+    }
+
+  
+
+</style>
+
+
