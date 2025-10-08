@@ -3,9 +3,11 @@ using DashBoardDemo.Models;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
+using DashBoardDemo.Interface;
+
 namespace DashBoardDemo.Repository
 {
-    public class PatientDataRepo
+    public class PatientDataRepo : IPatientDataRepo
     {
 
         private readonly AppDbContext appDbContext;

@@ -2,9 +2,11 @@
 using DashBoardDemo.Models;
 using Microsoft.EntityFrameworkCore;
 
+using DashBoardDemo.Interface;
+
 namespace DashBoardDemo.Repository
 {
-    public class PieChartRepo
+    public class PieChartRepo : IPieChartRepo
     {
         private readonly AppDbContext appDbContext;
 

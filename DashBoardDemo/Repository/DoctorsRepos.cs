@@ -2,9 +2,11 @@
 using DashBoardDemo.Models;
 using Microsoft.EntityFrameworkCore;
 
+using DashBoardDemo.Interface;
+
 namespace DashBoardDemo.Repository
 {
-    public class DoctorsRepos
+    public class DoctorsRepos : IDoctorsRepos
     {
         private readonly AppDbContext appDbContext;
 

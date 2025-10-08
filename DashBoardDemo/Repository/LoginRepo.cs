@@ -4,9 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 using System.Text;
 
+using DashBoardDemo.Interface;
+
 namespace DashBoardDemo.Repository
 {
-    public class LoginRepo
+    public class LoginRepo : ILoginRepo
     {
         private readonly AppDbContext appDbContext;
 

@@ -4,9 +4,11 @@ using DashBoardDemo.ModelServerSide;
 using Microsoft.EntityFrameworkCore;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
+using DashBoardDemo.Interface.Interface_ServerSide;
+
 namespace DashBoardDemo.ServerSideRepository
 {
-    public class ServerSide_DoctosListRepo
+    public class ServerSide_DoctosListRepo : IServerSide_DoctosListRepo
     {
         private readonly AppDbContext appDbContext;
 

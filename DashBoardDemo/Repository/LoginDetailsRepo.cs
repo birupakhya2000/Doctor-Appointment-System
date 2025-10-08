@@ -6,9 +6,11 @@ using System;
 using System.Security.Cryptography;
 using System.Net.Mail;
 
+using DashBoardDemo.Interface;
+
 namespace DashBoardDemo.Repository
 {
-    public class LoginDetailsRepo
+    public class LoginDetailsRepo : ILoginDetailsRepo
     {
 
         private readonly AppDbContext appDbContext;

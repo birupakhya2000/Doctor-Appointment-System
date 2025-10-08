@@ -1,9 +1,11 @@
 ﻿using DashBoardDemo.Models;
 using Microsoft.EntityFrameworkCore;
 
+using DashBoardDemo.Interface;
+
 namespace DashBoardDemo.Repository
 {
-    public class Edit_UpdateRepo
+    public class Edit_UpdateRepo : IEdit_UpdateRepo
     {
 
         private readonly AppDbContext appDbContext;

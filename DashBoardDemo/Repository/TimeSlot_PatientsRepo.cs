@@ -3,9 +3,11 @@ using DashBoardDemo.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Xml.Linq;
 
+using DashBoardDemo.Interface;
+
 namespace DashBoardDemo.Repository
 {
-    public class TimeSlot_PatientsRepo
+    public class TimeSlot_PatientsRepo : ITimeSlot_PatientsRepo
     {
         private readonly AppDbContext appDbContext;
 

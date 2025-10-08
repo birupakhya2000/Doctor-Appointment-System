@@ -28,23 +28,22 @@ builder.Services.AddSession(options =>
 
 
 #region Repo
-
-builder.Services.AddScoped<PatientsRepo>();
-builder.Services.AddScoped<DoctorsRepo>();
-builder.Services.AddScoped<PatientsRepos>();
-builder.Services.AddScoped<UserLoginRepo>();
-builder.Services.AddScoped<DoctorsRepos>();
-builder.Services.AddScoped<TimeSlot_PatientsRepo>();
-builder.Services.AddScoped<ServerSide_DoctosListRepo>();
-builder.Services.AddScoped<ServerSide_patientslistRepo>();
-builder.Services.AddScoped<ServerSide_PatientsTimeSlotRepo>();
-builder.Services.AddScoped<ServerSide_DoctorsTimeSlotRepo>();
-builder.Services.AddScoped<StatisticsRepo>();
-builder.Services.AddScoped<PieChartRepo>();
-builder.Services.AddScoped<LoginRepo>();
-builder.Services.AddScoped<Edit_UpdateRepo>();
-builder.Services.AddScoped<PatientDataRepo>();
-builder.Services.AddScoped<LoginDetailsRepo>();
+builder.Services.AddScoped<IPatientsRepo, PatientsRepo>();
+builder.Services.AddScoped<IDoctorsRepo, DoctorsRepo>();
+builder.Services.AddScoped<IPatientsRepos, PatientsRepos>();
+builder.Services.AddScoped<IUserLoginRepo, UserLoginRepo>();
+builder.Services.AddScoped<IDoctorsRepos, DoctorsRepos>();
+builder.Services.AddScoped<ITimeSlot_PatientsRepo, TimeSlot_PatientsRepo>();
+builder.Services.AddScoped<IServerSide_DoctosListRepo, ServerSide_DoctosListRepo>();
+builder.Services.AddScoped<IServerSide_patientslistRepo, ServerSide_patientslistRepo>();
+builder.Services.AddScoped<IServerSide_PatientsTimeSlotRepo, ServerSide_PatientsTimeSlotRepo>();
+builder.Services.AddScoped<IServerSide_DoctorsTimeSlotRepo, ServerSide_DoctorsTimeSlotRepo>();
+builder.Services.AddScoped<IStatisticsRepo, StatisticsRepo>();
+builder.Services.AddScoped<IPieChartRepo, PieChartRepo>();
+builder.Services.AddScoped<ILoginRepo, LoginRepo>();
+builder.Services.AddScoped<IEdit_UpdateRepo, Edit_UpdateRepo>();
+builder.Services.AddScoped<IPatientDataRepo, PatientDataRepo>();
+builder.Services.AddScoped<ILoginDetailsRepo, LoginDetailsRepo>();
 #endregion
 
 

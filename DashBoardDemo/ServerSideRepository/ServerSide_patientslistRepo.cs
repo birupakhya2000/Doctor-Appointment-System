@@ -1,9 +1,11 @@
 ﻿using DashBoardDemo.ModelDb;
 using DashBoardDemo.Models;
 
+using DashBoardDemo.Interface.Interface_ServerSide;
+
 namespace DashBoardDemo.ServerSideRepository
 {
-    public class ServerSide_patientslistRepo
+    public class ServerSide_patientslistRepo : IServerSide_patientslistRepo
     {
         private readonly AppDbContext appDbContext;
 

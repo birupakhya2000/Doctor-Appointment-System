@@ -1,8 +1,10 @@
 ﻿using DashBoardDemo.Models;
 
+using DashBoardDemo.Interface;
+
 namespace DashBoardDemo.Repository
 {
-    public class StatisticsRepo
+    public class StatisticsRepo : IStatisticsRepo
     {
         private readonly AppDbContext appDbContext;
 

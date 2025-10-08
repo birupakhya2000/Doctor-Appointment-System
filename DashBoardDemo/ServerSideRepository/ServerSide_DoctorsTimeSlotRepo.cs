@@ -3,9 +3,11 @@ using DashBoardDemo.Models;
 using DashBoardDemo.ModelServerSide;
 using Microsoft.EntityFrameworkCore;
 
+using DashBoardDemo.Interface.Interface_ServerSide;
+
 namespace DashBoardDemo.ServerSideRepository
 {
-    public class ServerSide_DoctorsTimeSlotRepo
+    public class ServerSide_DoctorsTimeSlotRepo : IServerSide_DoctorsTimeSlotRepo
     {
         private readonly AppDbContext appDbContext;
 
